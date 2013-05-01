@@ -5,14 +5,14 @@ Add fun to your REST API !
 Implementation of the StatusType with all HTTP 7xx codes as defined in https://github.com/joho/7XX-rfc
 
 Use:
-'''
+```
 <dependency>
   <groupId>be.redlab.jersey</groupId>
   <artifactId>http-7xx</artifactId>
   <version>1.0</version>
 </dependency>
-'''
-
+```
+[![Build Status](https://redlab.ci.cloudbees.com/job/http-7xx-jersey/badge/icon)](https://redlab.ci.cloudbees.com/job/http-7xx-jersey/)
 
 ## Custom statusses and tomcat
 
