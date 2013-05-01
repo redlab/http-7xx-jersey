@@ -4,6 +4,11 @@
 	<groupId>be.redlab.jersey</groupId>
 	<artifactId>http-7xx</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
 	<build>
 		<plugins>
 			<plugin>
@@ -18,13 +23,43 @@
 			</plugin>
 		</plugins>
 	</build>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
-
-	<dependency>
-		<groupId>com.sun.jersey</groupId>
-		<artifactId>jersey-core</artifactId>
-		<version>1.17.1</version>
-		<scope>provided</scope>
-	</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>1.17.1</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
+	<scm>
+		<connection>scm:git:git://github.com/redlab/http-7xx-jersey.git</connection>
+		<developerConnection>scm:git:git@github.com:redlab/http-7xx-jersey.git</developerConnection>
+		<tag>master</tag>
+	</scm>
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+	<organization>
+		<name>redlab.be</name>
+		<url>http://www.redlab.be/</url>
+	</organization>
+	<developers>
+		<developer>
+			<name>Balder Van Camp</name>
+			<id>redlab</id>
+			<email>balder@redlab.be</email>
+		</developer>
+	</developers>
+	<ciManagement>
+		<system>jenkins</system>
+		<url>https://redlab.ci.cloudbees.com/job/http-7xx-jersey/</url>
+	</ciManagement>
 </project>
