@@ -1,13 +1,26 @@
-/**
- *
+/*
+ * Copyright 2013 Balder Van Camp
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations under the License.
  */
 package be.redlab.jersey.status;
+
+import java.util.Random;
 
 import javax.ws.rs.core.Response.Status.Family;
 import javax.ws.rs.core.Response.StatusType;
 
 /**
  * Status based on https://github.com/joho/7XX-rfc
+ * You can just send it with Jersey’s response like return
+ * <code>Response.status(HttpStatus7xx.A_KITTEN_DIES).build();</code>
  *
  * @author redlab
  * @since 20130501
@@ -291,7 +304,6 @@ public enum HttpStatus7xx implements StatusType {
 	*799 End of the world
 	*/
 	END_OF_THE_WORLD(799,"End of the world");
-;
 
 	private int code;
 	private String reason;
@@ -328,4 +340,16 @@ public enum HttpStatus7xx implements StatusType {
 
 	}
 
+	private static Random RND = new Random();
+	private static int MAX_RND = HttpStatus7xx.values().length;
+
+	/**
+	 * Puzzle your users with returning a pseudo random HttpStatus7xx on every call.
+	 *
+	 * @return a pseudo randomly chosen HttpStatus7xx
+	 */
+	public static HttpStatus7xx getRandom() {
+		return HttpStatus7xx.values()[RND.nextInt(MAX_RND)];
+
+	}
 }
