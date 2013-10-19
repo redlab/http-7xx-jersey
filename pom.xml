@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.redlab.jersey</groupId>
 	<artifactId>http-7xx</artifactId>
-	<version>1.1</version>
+	<version>1.2-SNAPSHOT</version>
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
